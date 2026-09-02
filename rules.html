@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Match and tournament rules for the Cascais Padel Crew.">
+<link rel="icon" href="img/logo-128.jpg">
+<link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/spacegrotesk-latin.woff2" crossorigin>
+<title>Rules — Cascais Padel Crew</title>
+
+<style>/* Organic — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* latin-ext */
+@font-face {
+  font-family: 'Caprasimo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/caprasimo-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Caprasimo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/caprasimo-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/figtree-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/figtree-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/figtree-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/figtree-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --color-bg: #f5ead8;
+  --color-surface: #ebddc5;
+  --color-text: #201e1d;
+  --color-accent: #c67139;
+  --color-accent-2: #7a8a5e;
+  --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f9f4ed;
+  --color-neutral-200: #eee7db;
+  --color-neutral-300: #dcd3c4;
+  --color-neutral-400: #c0b6a5;
+  --color-neutral-500: #a19786;
+  --color-neutral-600: #82796a;
+  --color-neutral-700: #645c50;
+  --color-neutral-800: #474238;
+  --color-neutral-900: #2e2b25;
+
+  --color-accent-100: #fff2eb;
+  --color-accent-200: #ffe1d0;
+  --color-accent-300: #ffc6a5;
+  --color-accent-400: #f6a06b;
+  --color-accent-500: #d67f48;
+  --color-accent-600: #b2622d;
+  --color-accent-700: #8c491a;
+  --color-accent-800: #643312;
+  --color-accent-900: #402310;
+
+  --color-accent-2-100: #f0fae1;
+  --color-accent-2-200: #e1eecc;
+  --color-accent-2-300: #ccdbb2;
+  --color-accent-2-400: #aebf92;
+  --color-accent-2-500: #8fa073;
+  --color-accent-2-600: #728157;
+  --color-accent-2-700: #56633f;
+  --color-accent-2-800: #3d472b;
+  --color-accent-2-900: #272e1b;
+
+  --font-heading: "Caprasimo", system-ui, sans-serif;
+  --font-heading-weight: 400;
+  --font-body: "Figtree", system-ui, sans-serif;
+
+  --space-1: 4.4px;
+  --space-2: 8.8px;
+  --space-3: 13.2px;
+  --space-4: 17.6px;
+  --space-6: 26.4px;
+  --space-8: 35.2px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2e2b25 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2e2b25 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.washed{filter:saturate(0.6) contrast(0.85) brightness(1.1) opacity(0.94)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+/* — rounded frame: everything softens, small controls go pill — */
+.card, .dialog { border-radius: calc(var(--radius-lg) * 1.15); }
+.btn, .tag, .seg, .input { border-radius: 999px; }
+.input { padding-inline: 14px; }
+
+</style>
+<link rel="icon" href="img/logo.jpg">
+<style>/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/dmsans-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/dmsans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/dmsans-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/dmsans-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-viet.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latinext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/spacegrotesk-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+  :root, body {
+    --color-bg: #101216; --color-surface: #191d23; --color-text: #f3f4f1;
+    --color-accent: #f4c11f; --color-accent-2: #e8ddc4;
+    --color-divider: color-mix(in srgb, #f3f4f1 14%, transparent);
+    --color-accent-100: #2a2410; --color-accent-200: #26301b; --color-accent-300: #3d5222;
+    --color-accent-400: #7fa32e; --color-accent-500: #f4c11f; --color-accent-600: #b4ea2c;
+    --color-accent-700: #ffd44d; --color-accent-800: #e6ff9c; --color-accent-900: #f2ffcd;
+    --color-accent-2-100: #14231f; --color-accent-2-200: #1a302b; --color-accent-2-300: #234a43;
+    --color-accent-2-400: #3d8377; --color-accent-2-500: #e8ddc4; --color-accent-2-600: #55cdb0;
+    --color-accent-2-700: #8ff0d6; --color-accent-2-800: #b6f5e4; --color-accent-2-900: #dcfaf2;
+    --font-heading: 'Space Grotesk', sans-serif; --font-heading-weight: 700;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  body { margin: 0; background: #101216; color: #f3f4f1; text-wrap: pretty; overflow-x: clip;
+    font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #f4c11f; text-decoration: none; }
+  a:hover { color: #ffd44d; }
+  :focus-visible { outline: 2px solid #f4c11f; outline-offset: 3px; }
+  ::selection { background: rgba(244,193,31,0.28); }
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+  @media (max-width: 760px) {
+    .bento { grid-template-columns: 1fr !important; grid-auto-rows: 240px !important; }
+  }
+  @media (max-width: 560px) {
+    .topbar { gap: 10px; }
+    .brand { font-size: 15px; }
+    .brand img { width: 32px !important; height: 32px !important; }
+    .topnav { margin-left: 0 !important; width: 100%; justify-content: space-between; }
+    .topnav a:last-child { margin-left: 0 !important; padding: 11px 16px !important; }
+  }
+  @media (max-width: 420px) {
+    h1 { hyphens: auto; }
+  }
+  img, image-slot { max-width: 100%; }
+</style>
+<style>html,body{height:100%;margin:0}[hidden]{display:none!important}picture{display:block}
+[data-hv="0"]:hover{background:rgba(243,244,241,0.07);color:#f3f4f1}
+[data-hv="1"]:hover{background:#ffd44d;transform:translateY(-1px)}
+[data-hv="2"]:hover{color:#f4c11f}
+[data-hv="3"]:hover{background:#ffd44d;transform:translateY(-2px)}
+[data-hv="4"]:hover{background:#f4c11f;border-color:#f4c11f;color:#101216}
+[data-hv="5"]:hover{background:#f4c11f;border-color:#f4c11f;color:#101216}
+[data-hv="6"]:hover{background:#f4c11f;border-color:#f4c11f;color:#101216}</style>
+</head>
+<body>
+<div style="min-height:100vh;background:#101216;color:#f3f4f1;font-family:'DM Sans',sans-serif">
+
+  <header style="position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(16,18,22,0.72);border-bottom:1px solid rgba(243,244,241,0.08)">
+    <div class="topbar" style="max-width:1180px;margin:0 auto;padding:16px clamp(20px,4vw,40px);display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <a class="brand" href="index.html" style="display:flex;align-items:center;gap:10px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.01em;color:inherit;text-decoration:none">
+        <img src="img/logo-128.jpg" srcset="img/logo-128.jpg 128w, img/logo-256.jpg 256w" sizes="38px" alt="Cascais Padel Crew" width="38" height="38" decoding="async" fetchpriority="high" style="width:38px;height:38px;border-radius:50%;object-fit:cover;background:#000">
+        Cascais Padel Crew
+      </a>
+      <nav class="topnav" style="margin-left:auto;display:flex;align-items:center;gap:8px">
+        <a href="rules.html" style="padding:9px 16px;border-radius:999px;font-size:14.5px;font-weight:500;color:rgba(243,244,241,0.72)" data-hv="0">Rules</a>
+        <a href="https://chat.whatsapp.com/GWEeqsliOPUGJXGL1ZRS9X?mode=gi_t" target="_blank" rel="noopener" style="margin-left:8px;padding:11px 20px;border-radius:999px;background:#f4c11f;color:#101216;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14.5px;white-space:nowrap;transition:transform .18s ease,background .18s ease" data-hv="1">Join the crew</a>
+      </nav>
+    </div>
+  </header>
+
+    <div>
+      <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,40px) clamp(28px,4vw,40px)">
+        <a href="index.html" style="font-size:14px;color:rgba(243,244,241,0.6)" data-hv="2">← Back home</a>
+        <div style="display:flex;align-items:center;gap:10px;margin:32px 0 18px">
+          <span style="width:7px;height:7px;border-radius:50%;background:#f4c11f"></span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,244,241,0.75)">Must read</span>
+        </div>
+        <h1 style="font-size:clamp(34px,5.4vw,68px);line-height:1;letter-spacing:-0.035em;margin:0;max-width:20ch">🎾 Beginners Challenge</h1>
+        <p style="font-size:clamp(17px,1.6vw,20px);line-height:1.6;max-width:56ch;margin:26px 0 0">Welcome!</p>
+        <p style="font-size:clamp(17px,1.6vw,20px);line-height:1.6;max-width:56ch;margin:10px 0 0;color:rgba(243,244,241,0.8)">This event is designed for Beginner and Upper Beginner padel players who want to gain more match experience in a friendly and supportive environment.</p>
+      </section>
+
+      <section style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px) clamp(56px,8vw,96px);display:flex;flex-direction:column;gap:18px">
+        <div style="border-radius:26px;background:#191d23;border:1px solid rgba(243,244,241,0.09);padding:clamp(24px,3vw,34px)">
+          <h2 style="font-size:20px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 16px">Player Requirements</h2>
+          <ul style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.75;color:rgba(243,244,241,0.78)">
+            <li>Open to men and women.</li>
+            <li>Suitable for Beginner and Upper Beginner players.</li>
+            <li>Recommended for players with 1–3 months of regular playing or coaching experience.</li>
+            <li>Players should know the basic rules of padel and be able to keep score independently.</li>
+          </ul>
+        </div>
+
+        <div style="border-radius:26px;background:#191d23;border:1px solid rgba(243,244,241,0.09);padding:clamp(24px,3vw,34px)">
+          <h2 style="font-size:20px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 16px">Event Rules</h2>
+          <ul style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.75;color:rgba(243,244,241,0.78)">
+            <li>The tournament lasts 2 hours.</li>
+            <li>We will play 6–7 rounds, with a maximum of 15 minutes per round.</li>
+            <li>Please arrive 15 minutes before the scheduled start time. We will have a short briefing for new players before the tournament starts.</li>
+            <li>Tournament participation must be paid before the tournament starts. Payment can be made through the Racket ID mobile app or directly at the reception.</li>
+            <li>You can cancel your registration free of charge up to 24 hours before the tournament. We kindly ask you to find a replacement whenever possible.</li>
+            <li>Less than 24 hours before the tournament, cancellation is only possible if you provide a replacement player.</li>
+            <li>No-show: If you do not attend the tournament and do not provide a replacement player, you will be responsible for paying the cost of one court.</li>
+            <li>Late to the tournament? You owe the whole crew a round of beers! 🍺😂</li>
+            <li>Fair play, respect for all players, and a positive attitude are expected throughout the event.</li>
+            <li>The goal is to improve your game, gain match experience, and enjoy playing with others.</li>
+          </ul>
+        </div>
+
+        <div style="border-radius:26px;background:#2a2410;border:1px solid rgba(244,193,31,0.25);padding:clamp(24px,3vw,34px)">
+          <h2 style="font-size:20px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 16px;color:#f4c11f">🎾 Match Rules</h2>
+          <ul style="margin:0;padding-left:20px;font-size:15.5px;line-height:1.75;color:rgba(243,244,241,0.85)">
+            <li>One whistle = start of the round.</li>
+            <li>Two whistles = end of the round.</li>
+            <li>When the final whistle sounds, finish the point currently being played, then stop the match and record the final score.</li>
+            <li>Each match is played until one team reaches a total of 7 points: 7–0, 6–1, 5–2 or 4–3.</li>
+            <li>If the score is tied when the match reaches the time limit, the final point is decided by Golden Point.</li>
+            <li>Players with a 1000 rating and no match experience/statistics in the Racket ID app will start on the last court in the first round.</li>
+          </ul>
+        </div>
+
+        <div style="border-radius:26px;background:#191d23;border:1px solid rgba(243,244,241,0.09);padding:clamp(24px,3vw,34px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+          <div>
+            <h2 style="font-size:20px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 16px">🎾 Cascais Padel Crew</h2>
+            <p style="margin:0;font-size:15.5px;line-height:1.7;color:rgba(243,244,241,0.7)">Join our WhatsApp community:</p>
+          </div>
+          <a href="https://chat.whatsapp.com/GWEeqsliOPUGJXGL1ZRS9X?s=c1&amp;p=i&amp;mlu=4&amp;amv=0" target="_blank" rel="noopener" style="padding:15px 26px;border-radius:999px;background:#f4c11f;color:#101216;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;transition:background .18s ease,transform .18s ease" data-hv="3">WhatsApp Community</a>
+        </div>
+      </section>
+    </div>
+  <footer style="border-top:1px solid rgba(243,244,241,0.08)">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,40px)">
+      <div style="display:flex;align-items:center;gap:clamp(20px,4vw,40px);flex-wrap:wrap">
+        <img src="img/logo-256.jpg" srcset="img/logo-128.jpg 128w, img/logo-256.jpg 256w" sizes="148px" alt="Cascais Padel Crew" width="148" height="148" loading="lazy" decoding="async" style="width:clamp(96px,12vw,148px);height:clamp(96px,12vw,148px);border-radius:50%;object-fit:cover;background:#000">
+        <div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(30px,5vw,58px);line-height:0.95;letter-spacing:-0.04em">Cascais<br>Padel Crew</div>
+          <div style="margin-top:14px;font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#f4c11f">Play · Connect · Have fun</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-top:36px">
+        <div style="display:flex;gap:12px">
+          <a href="https://chat.whatsapp.com/GWEeqsliOPUGJXGL1ZRS9X?mode=gi_t" target="_blank" rel="noopener" aria-label="WhatsApp group" title="WhatsApp group" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(243,244,241,0.2);display:grid;place-items:center;color:#f3f4f1;transition:background .18s ease,border-color .18s ease,color .18s ease" data-hv="4">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/cascaispadelcrew/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram" style="width:46px;height:46px;border-radius:50%;border:1px solid rgba(243,244,241,0.2);display:grid;place-items:center;color:#f3f4f1;transition:background .18s ease,border-color .18s ease,color .18s ease" data-hv="5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+        <span style="font-size:13.5px;color:rgba(243,244,241,0.45)">Cascais Padel Crew · 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo" data-lightbox-close style="position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:clamp(16px,4vw,56px);background:rgba(10,11,14,0.72);backdrop-filter:blur(18px);cursor:zoom-out">
+      <img id="lightbox-img" alt="" style="max-width:calc(100vw - 2 * clamp(16px,4vw,56px));max-height:calc(100vh - 2 * clamp(16px,4vw,56px));width:auto;height:auto;object-fit:contain;border-radius:24px;box-shadow:0 30px 80px rgba(0,0,0,0.55)">
+      <button type="button" data-lightbox-close aria-label="Close" style="position:absolute;top:clamp(12px,3vw,28px);right:clamp(12px,3vw,28px);width:44px;height:44px;border-radius:50%;border:1px solid rgba(243,244,241,0.25);background:rgba(16,18,22,0.6);color:#f3f4f1;font-size:20px;line-height:1;cursor:pointer" data-hv="6">×</button>
+    </div>
+  
+
+</div>
+<script>
+(function () {
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var img = document.getElementById('lightbox-img');
+  function open(src, alt) {
+    img.src = src; img.alt = alt || '';
+    box.hidden = false;
+    document.documentElement.style.overflow = document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    box.hidden = true; img.removeAttribute('src');
+    document.documentElement.style.overflow = document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-lightbox]');
+    if (t) { e.preventDefault(); open(t.getAttribute('data-lightbox'), t.getAttribute('data-lightbox-alt')); return; }
+    if (e.target.closest('[data-lightbox-close]')) { e.preventDefault(); close(); }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>

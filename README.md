@@ -8,6 +8,7 @@ img/        photos: AVIF + WebP + progressive JPEG, several widths each
 fonts/      self-hosted woff2 (DM Sans, Space Grotesk)
 src/        the original design-tool exports (see below)
 build.py    regenerates the three pages from src/
+make-og.py  regenerates img/og.jpg, the 1200x630 social-share banner
 ```
 
 Serve the repo root as-is:
@@ -60,4 +61,9 @@ identical page heights and identical text layout.
 
 ```sh
 python3 build.py     # needs Pillow with AVIF + WebP support
+python3 make-og.py   # only when the hero photo or headline changes
 ```
+
+`make-og.py` composes the share banner as HTML and screenshots it with
+headless Chromium, so it picks up the site's real fonts and hero photo
+instead of drifting from them.

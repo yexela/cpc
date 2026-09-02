@@ -109,6 +109,8 @@ SLOTS = {
     "social-2":         ("crew",         "The crew after a game",       "(max-width:760px) 100vw, 50vw", False),
 }
 LCP = {"index": "hero-court", "tournament": REMOTE_BANNER, "rules": None}
+SITE = "https://cascaispadelcrew.com"
+OG_ALT = "Cascais Padel Crew - a friendly padel community in Cascais, Portugal"
 DESC = {
  "index": "A friendly padel community in Cascais, Portugal. Find partners, share rides to tournaments and meet local players.",
  "rules": "Match and tournament rules for the Cascais Padel Crew.",
@@ -190,6 +192,10 @@ def build(page, assets, imgs):
 
     # runtime bindings -> plain HTML.  The two lightbox targets pointed at a
     # ./assets/ folder that was never in the bundle, so they were broken.
+    # copy: the beginner tournament has no fixed weekly slot; dates go out
+    # in the WhatsApp group.
+    tpl = tpl.replace('>Every weekend<', '>Announced in the group<')
+
     tpl = tpl.replace('sc-camel-view-box=', 'viewBox=')
     tpl = tpl.replace('sc-camel-on-click="{{ openBbq2 }}"',
                       f'data-lightbox="{biggest("bbq")}" data-lightbox-alt="Crew barbecue"')
@@ -215,7 +221,20 @@ def build(page, assets, imgs):
     helmet = re.sub(r'<link rel="preconnect"[^>]*>\s*', '', helmet)   # fonts are local now
 
     hv_css = "\n".join(f'[data-hv="{i}"]:hover{{{r}}}' for i, r in enumerate(hover))
+    title = re.search(r'<title>(.*?)</title>', helmet, re.S).group(1).strip()
+    url = SITE + ("/" if page == "index" else f"/{page}.html")
+    og = [('og:type', 'website'), ('og:site_name', 'Cascais Padel Crew'),
+          ('og:url', url), ('og:title', title), ('og:description', DESC[page]),
+          ('og:image', f'{SITE}/img/og.jpg'), ('og:image:width', '1200'),
+          ('og:image:height', '630'), ('og:image:alt', OG_ALT)]
+    tw = [('twitter:card', 'summary_large_image'), ('twitter:title', title),
+          ('twitter:description', DESC[page]), ('twitter:image', f'{SITE}/img/og.jpg'),
+          ('twitter:image:alt', OG_ALT)]
+
     head = [f'<meta name="description" content="{html.escape(DESC[page])}">',
+            f'<link rel="canonical" href="{url}">',
+            *[f'<meta property="{k}" content="{html.escape(v)}">' for k, v in og],
+            *[f'<meta name="{k}" content="{html.escape(v)}">' for k, v in tw],
             '<link rel="icon" href="img/logo-128.jpg">',
             '<link rel="preload" as="font" type="font/woff2" href="fonts/dmsans-latin.woff2" crossorigin>',
             '<link rel="preload" as="font" type="font/woff2" href="fonts/spacegrotesk-latin.woff2" crossorigin>']
